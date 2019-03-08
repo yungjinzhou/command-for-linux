@@ -1,3 +1,4 @@
+yum install lsof    centos系统适用
 lsof -p pid
 lsof -i:port      
 lsof -i:80 //显示所有打开80端口的进程
