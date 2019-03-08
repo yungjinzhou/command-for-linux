@@ -1,0 +1,7 @@
+tail -f apm.log | grep jh01-db5
+
+启动进程
+/etc/init.d/apm-     start
+
+lsof -p: pid看redis连接状态
+zcat apm.log.gz | grep ...

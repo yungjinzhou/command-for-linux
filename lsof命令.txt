@@ -1,0 +1,11 @@
+lsof -p pid
+lsof -i:port      
+lsof -i:80 //显示所有打开80端口的进程
+lsof -i //显示所有打开的端口
+lsof -p 30297 //显示那些文件被pid为30297的进程打开
+lsof -u1000 //查看uid是100的用户的进程的文件使用情况
+lsof `which httpd` //那个进程在使用apache的可执行文件
+lsof /etc/passwd //那个进程在占用/etc/passwd
+lsof /dev/hda6 //那个进程在占用hda6
+lsof /dev/cdrom //那个进程在占用光驱
+lsof -c sendmail //查看sendmail进程的文件使用情况

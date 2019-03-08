@@ -1,0 +1,19 @@
+
+跳板机--vpn登陆后使用
+ssh -i yangjinzhou.pem yangjinzhou@10.20.0.60
+sudo权限
+
+输入p：  可访问的主机
+
+选择编号(0)进入对应主机
+进入目录/home/work/log/apm/查看apm.log
+查看anzhi注入任务情况
+sudo tail -f apm.log | fgrep 'AnzhiInjectFileKsyun&'
+
+
+查看对应跳转状态情况
+fgrep 'taskid' /home/work/log/apm/apm.log
+
+
+
+

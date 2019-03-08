@@ -1,0 +1,143 @@
+python setup.py install  安装pip包安装方式
+
+pip install package_name==version  pip安装方式
+
+yum install package_name==version  yum安装方式
+
+yum search package_name  yum搜索可用安装包
+
+
+
+cat /var/log/apmapi.log  查看apmapi日志看uwsgi启动是否成功
+tail -f /var/log/message 动态查看运行日志文件底部数据/循环监视日志文件
+
+uwsgi --ini name.ini   uwsgi启动方式
+uwsgi --stop apmapi.pid  uwsgi停止方式
+sh ./Cache.sh start    缓存Cache启动方式
+#重启
+uwsgi --reload apmapi.pid  
+
+
+
+make clean
+nake distclean
+make remove
+
+virtualenv env
+
+
+chmod +x file_name.sh
+./file_name.sh（可以写全路径）  or  sh file_name.sh  or  bash file_name.sh  三种运行方式
+sh ./zkServer.sh start开启zookeeper
+sh ./zkCli.sh 开启zookeeper客户端，根据get /ApmConfig/Redis查看配置
+
+
+sh ./DomainConfig.sh start开启domainconfig进程
+开启具体worker进程的debug模式，
+./apm worker --debug -q Q:DomainConfig
+
+
+
+git checkout -b dev   创建并切换到dev分支
+git push origin dev   将本地提交到远程分支dev，如果远程没有则创建
+git pull origin dev     将远程分支dev代码下载并合并到本地当前分支
+git pull origin next:master  取回origin主机的next分支，与本地的master分支合并，相当于get fetch origin    git merge origin/next
+
+git branch --set-upstream master origin/next
+git clone ""    git自动追踪当前分支与对应远程分支
+
+git merge dev    将分支dev合并到当前分支中，自动进行新的提交：
+git stash 保存当前未提交进度，切换分支
+git stash pop，切换回此分支，删除缓存，恢复未提交进度
+
+
+
+
+客户端登陆zookeeper后获取get  /ApmConfig/Redis
+set  /ApmConfig/Redis  {"Master": "10.24.0.102:6379"}       zookeeper配置
+
+
+1. 启动ZK服务:?????? sh bin/zkServer.sh start 
+2. 查看ZK服务状态: sh bin/zkServer.sh status 
+3. 停止ZK服务:?????? sh bin/zkServer.sh stop 
+4. 重启ZK服务:?????? sh bin/zkServer.sh restart
+
+---------------------
+
+ 
+ctrl + z后台运行进程
+
+
+curl -vo /dev/null http://test001.cdnlnkd.com/a.jpg -x test001.cdnlnkd.com.cdn.cloudflare.net:80  
+删除缓存后第一次请求 CF-Cache-Status: MISS， 第二次请求CF-Cache-Status: HIT
+`-v`参数可以显示一次http通信的整个过程，包括端口连接和http request头信息。
+如果要把这个网页保存下来，可以使用`-o`参数，这就相当于使用wget命令了。 $ curl -o [文件名] www.sina.com
+
+
+
+系统路径中的分割函数使用
+os.path.splitext()
+os.path.splitext() 函数将文件名和扩展名分开
+os.path.split()
+os.path.split() 函数将文件路径和文件名分开
+
+{}的作用是区别与普通字符变量，便于输出
+var=foo
+echo $varbar
+# Prints nothing because there is no variable 'varbar'
+echo ${var}bar
+# foobar
+
+
+$var和"$var"的区别，后者将参数作为整体，一个词
+var="foo bar"
+for i in "$var"; do # Expands to 'for i in "foo bar"; do...'
+    echo $i         #   so only runs the loop once
+done
+# foo bar
+
+var="foo bar"
+for i in $var; do # Expands to 'for i in foo bar; do...'
+    echo $i       #   so runs the loop twice, once for each argument
+done
+# foo
+# bar
+
+
+curl -o/-O filename url，保存访问的网页或文件，
+-o参数是保存，filename是要保存的文件名，
+-O是将远端的文件以远端文件的文件名自动保存到本地，这个命令主要是下载文件，如果需要获取多个文件，可以采用curl -O url1 -O url2
+curl -v url
+-v参数是显示http访问的整个过程，即整个通信过程
+curl -I url    通过-I或者-head可以只打印出HTTP头部信息： curl -I 查看header头信息
+curl -i url，访问网页并显示response信息，
+-i参数是显示response信息，-I参数是只显示response头部信息
+curl -oV url
+
+curl -X GET http://localhost:8080/search?data=123  # -X GET是可选的
+curl -X POST -d"data=123&key=456" http://localhost:8080/search -v 
+
+
+
+dig  域名
+查看域名的CNAME和A
+
+
+查看centosi系统内核
+uname -a
+查看发行版本
+cat /etc/redhat-release
+
+cat /etc/grub.conf
+
+
+ ./apm worker --debug -q Q:A
+
+./bin/zkCli.sh -server `hostname`:2181
+
+
+sh ./change_config.sh test
+
+
+
+
