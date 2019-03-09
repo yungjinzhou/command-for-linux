@@ -1,0 +1,17 @@
+yum search后安装
+
+iostat -x 磁盘使用
+iotop 磁盘使用
+
+监控系统状态
+netstat 查看网络状态
+netstat -lnp查看监听端口
+netstat -an 查看系统的网络连接状况
+netstat -lntp 只看tcp的，不包含socket
+netstat -ltunp  tcp和udp的连接， 命令中u代表udp， t代表tcp
+netstat -an | awk '/^tcp/ {++sta[$NF]} END {for(key in sta) print key, "\t",sta[key]}'   查看与服务器连接的个数（lestablished）和通信个数(listen)
+     
+
+
+
+
