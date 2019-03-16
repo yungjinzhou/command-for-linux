@@ -106,3 +106,6 @@ DNS查询过程中的交互是采用UDP的。如果你希望采用TCP方式，需要这样
 
 dig +trace roclinux.cn 
 dig非常著名的一个查询选项就是+trace，当使用这个查询选项后，dig会从根域查询一直跟踪直到查询到最终结果，并将整个过程信息输出出来
+
+dig +short www.baidu.com
+使用+short的话，仅会输出最精简的CNAME信息和A记录，其他都不会输出。就像这样
