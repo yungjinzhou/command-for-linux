@@ -9,3 +9,32 @@
 
 可以用lsof -p pid_number查看进程连接情况(连接到redis等情况)
 lsof -i:port
+
+
+
+
+要启动的进程
+TimeOut
+IsureDomainConfig
+IsureDomainUpstream
+IsureUpstreamTemplate
+RecoveredRefreshFile
+RecoveredQuery
+RefreshFile
+NonBlockQuery
+Cache
+Timer
+StateMachine
+Nsupdate
+BiliInjectFile
+alarm
+apmreturn
+DomainConfig
+DomainConfigCheck
+ServiceManager
+Noop
+LiveBlackList
+Query
+RefreshFileMatch
+RefreshDirMatch
+TencentInjectFile
