@@ -116,6 +116,12 @@ docker load -i ~/container-backup.tar
 docker images查看
 docker run -------
 
+修改docker中的时间
+复制主机的localtime
+docker cp /etc/localtime:【容器ID或者NAME】/etc/localtime
+如果docker版本低，不支持cp可以scp拷贝
+
+
 
 运行dockerfile
 docker build -t zingdocker/jdk-tomcat .
