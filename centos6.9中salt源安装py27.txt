@@ -12,6 +12,17 @@ yum install -y vim-enhanced.x86_64
 yum install https://repo.saltstack.com/yum/redhat/salt-repo-2017.7-1.el6.noarch.rpm
 vim /etc/yum.repos.d/salt-2017.7.repo
 
+ÐÞ¸ÄÄÚÈÝ
+[salt-2017.7]
+name=SaltStack 2017.7 Release Channel for RHEL/Centos $releasever
+baseurl=https://repo.saltstack.com/yum/redhat/6/$basearch/2017.7
+failovermethod=priority
+enabled=1
+gpgcheck=0
+gpgkey=file:///etc/pki/rpm-gpg/saltstack-signing-key
+
+
+
 yum install -y python27         (python27-2.7.13-3.ius.el6.x86_64      python27-libs-2.7.13-3.ius.el6.x86_64)
 yum install -y python27-pip     (python27-setuptools-36.6.0-1.ius.el6.noarch    python27-pip-9.0.1-2.ius.el6.noarch)
 
