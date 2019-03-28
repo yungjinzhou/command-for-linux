@@ -1,0 +1,3 @@
+.tar.gz 
+°°Ω‚—π£∫tar zxvf FileName.tar.gz 
+°°—πÀı£∫tar zcvf FileName.tar.gz dirName

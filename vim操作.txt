@@ -2,3 +2,15 @@ zo #展开
 zc #收起
 zn #全部展开
 zN #全部折叠
+
+
+
+最快的方式是让光标停留在想要查找的单词的任意一个字母上面， 然后输入Shift + *  ，即可快速选中该单词，并且可以通过 n  或  N 进行上一个或下一个的匹配。
+
+
+
+:s/vivian/sky/g 替换当前行所有 vivian 为 sky
+:%s/vivian/sky/(等同于 :g/vivian/s//sky/) 替换每一行的第一个 vivian 为 sky
+:%s/vivian/sky/g(等同于 :g/vivian/s//sky/g) 替换每一行中所有 vivian 为 sky
+:n,$s/vivian/sky/g 替换第 n 行开始到最后一行中每一行所有 vivian 为 sky
+
