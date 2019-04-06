@@ -94,7 +94,23 @@ ps -eo pid,user,args：参数 -e 显示所有进程信息，-o 参数控制输出。Pid,User 和 Arg
 # ps -ef |grep <父进程PID>
 
 
+[root@apm-test lib]# ps -ef | grep uwsgi
+root     11398     1  0 Mar25 ?        00:00:33 uwsgi --ini lib/apm/applications/apmapi/apmapi.ini
+root     11402 11398  0 Mar25 ?        00:00:00 uwsgi --ini lib/apm/applications/apmapi/apmapi.ini
+root     11403 11398  0 Mar25 ?        00:00:00 uwsgi --ini lib/apm/applications/apmapi/apmapi.ini
 
+[root@apm-test lib]# ps --ppid 1 | grep uwsgi
+11398 ?        00:00:33 uwsgi
+指定ppid即父进程，查看uwsgi的父进程id
+
+
+
+
+
+ps查看所有进程
+pid 进程号
+ppid 父进程号
+uid 用户号
 
 
 
