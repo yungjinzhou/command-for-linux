@@ -1,0 +1,41 @@
+kill -signal %jobnumber
+
+kill -l列出目前kill能够使用的信号有哪些
+
+
+-a：当处理当前进程时，不限制命令名和进程号的对应关系；
+-l <信息编号>：若不加<信息编号>选项，则-l参数会列出全部的信息名称；
+-p：指定kill 命令只打印相关进程的进程号，而不发送任何信号；
+-s <信息名称或编号>：指定要送出的信息；
+-u：指定用户。
+
+HUP     1    终端断线    1) SIGHUP
+INT     2    中断（同 Ctrl + C）    2) SIGINT 
+QUIT    3    退出（同 Ctrl + \）       3) SIGQUIT 
+TERM   15    终止      15) SIGTERM
+KILL    9    强制终止    9) SIGKILL
+CONT   18    继续（与STOP相反， fg/bg命令）     18) SIGCONT  
+STOP   19    暂停（同 Ctrl + Z）   19) SIGSTOP 
+
+kill -1 重复读取一次参数的配置文件
+kill -2 代表与键盘输入ctrl -c同样的操作
+kill -9 立刻强制删除一个工作
+kill -15 已正常的方式终止一个工作，kill -s 15  pid
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

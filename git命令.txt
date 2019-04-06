@@ -47,3 +47,15 @@ git config --global alias.ckt checkout
 git config --global alias.cmt commit
 
 git config --global alias.br branch
+
+
+git config --global user.email "你的git的注册邮箱"
+git config --global user.user"你的git用户名"
+
+使用git pull或者git push每次都需要输入用户名和密码很不人性化，耽误时间，现在教大家一条命令实现保存用户名和密码不用再输入
+
+
+git config --global credential.helper store
+
+
+git pull /git push (这里需要输入用户名和密码，以后就不用啦)
