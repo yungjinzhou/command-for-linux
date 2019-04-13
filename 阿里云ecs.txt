@@ -1,6 +1,0 @@
-
-云服务器     远程登录 641177
-实例ID:i-2zeei6o2wag5gqoza69t
-实例名称:iZ2zeei6o2wag5gqoza69tZ 
-公网IP：39.97.168.152
-内网IP：172.17.215.170
