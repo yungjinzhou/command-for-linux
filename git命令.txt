@@ -59,3 +59,12 @@ git config --global credential.helper store
 
 
 git pull /git push (这里需要输入用户名和密码，以后就不用啦)
+
+
+
+Git commit --amend——将暂存区的更改添加到最近一次提交中。适用于已经cmt一次了，但是有新的更改，可以将新的更改add进暂存区，然后用此命令，相当于一次提交。
+
+
+git reset –-hard HEAD——撤销最近提交以来暂存区文件和非暂存区的改动。将暂存区的文件恢复到非暂存区并且还原为未修改状态
+git reflog——显示本地代码库 HEAD 的更改日志。这个命令很适合查找丢失的工作。
+Git revert my commit——撤销 my_commit 中的更改。当用 revert 撤销改动时，它会产生新的提交。撤销本次提交的所有改动，恢复到未改动状态
