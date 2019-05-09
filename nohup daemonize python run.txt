@@ -1,8 +1,0 @@
-nohup python2.7 111.py 1 &
-1为sys.argv
-111.py为python 的脚本文件
-
-
-
-
-cp file1 file2 &  后台将文件1复制为文件2
