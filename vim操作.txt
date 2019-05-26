@@ -32,3 +32,23 @@ dE 删除到单词末尾，包括标点在内
 v e快速选中一个单词，
 y复制单词
 复制后v e选中另一个单词，y则是替换
+
+
+
+粘贴（避免粘贴时(insert) VISUAL模式）
+普通模式下输入“:set mouse-=a”
+或者编辑.vimrc 
+if has('mouse')
+    set mouse-=a
+endif
+
+
+解决粘贴乱码(多空行)的问题
+命令模式下输入:set paste
+
+解除paste模式:set nopaste
+
+
+
+
+
