@@ -1,4 +1,6 @@
-salt-call [options]
+salt-call
+ [options]
+
 
 The salt-call command is used to run module functions locally on a minion instead of executing them from the master. Salt-call is used to run a Standalone Minion, and was originally created for troubleshooting.
 

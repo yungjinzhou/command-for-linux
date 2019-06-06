@@ -1,33 +1,64 @@
-Í¨¹ýtracerouteÎÒÃÇ¿ÉÒÔÖªµÀÐÅÏ¢´ÓÄãµÄ¼ÆËã»úµ½»¥ÁªÍøÁíÒ»¶ËµÄÖ÷»úÊÇ×ßµÄÊ²Ã´Â·¾¶¡£µ±È»Ã¿´ÎÊý¾Ý°üÓÉÄ³Ò»Í¬ÑùµÄ³ö·¢µã£¨source£©µ½´ïÄ³Ò»Í¬ÑùµÄÄ¿µÄµØ(destination)×ßµÄÂ·¾¶¿ÉÄÜ»á²»Ò»Ñù£¬µ«»ù±¾ÉÏÀ´Ëµ´ó²¿·ÖÊ±ºòËù×ßµÄÂ·ÓÉÊÇÏàÍ¬µÄ¡£linuxÏµÍ³ÖÐ£¬ÎÒÃÇ³ÆÖ®Îªtraceroute,ÔÚMS WindowsÖÐÎªtracert¡£ tracerouteÍ¨¹ý·¢ËÍÐ¡µÄÊý¾Ý°üµ½Ä¿µÄÉè±¸Ö±µ½Æä·µ»Ø£¬À´²âÁ¿ÆäÐèÒª¶à³¤Ê±¼ä¡£Ò»ÌõÂ·¾¶ÉÏµÄÃ¿¸öÉè±¸tracerouteÒª²â3´Î¡£Êä³ö½á¹ûÖÐ°üÀ¨Ã¿´Î²âÊÔµÄÊ±¼ä(ms)ºÍÉè±¸µÄÃû³Æ£¨ÈçÓÐµÄ»°£©¼°ÆäIPµØÖ·¡£
+Í¨¹ýtracerouteÎÒÃÇ¿ÉÒÔÖªµÀÐÅÏ¢´ÓÄãµÄ¼ÆËã»úµ½»¥ÁªÍøÁíÒ»¶ËµÄÖ÷»úÊÇ×ßµÄÊ²Ã´Â·¾¶¡£
+µ±È»Ã¿´ÎÊý¾Ý°üÓÉÄ³Ò»Í¬ÑùµÄ³ö·¢µã£¨source£©µ½´ïÄ³Ò»Í¬ÑùµÄÄ¿µÄµØ(destination)×ßµÄÂ·¾¶¿ÉÄÜ»á²»Ò»Ñù£¬µ«»ù±¾ÉÏÀ´Ëµ´ó²¿·ÖÊ±ºòËù×ßµÄÂ·ÓÉÊÇÏàÍ¬µÄ¡£
+linuxÏµÍ³ÖÐ£¬ÎÒÃÇ³ÆÖ®Îªtraceroute,ÔÚMS WindowsÖÐÎªtracert¡£
+ tracerouteÍ¨¹ý·¢ËÍÐ¡µÄÊý¾Ý°üµ½Ä¿µÄÉè±¸Ö±µ½Æä·µ»Ø£¬À´²âÁ¿ÆäÐèÒª¶à³¤Ê±¼ä¡£
+Ò»ÌõÂ·¾¶ÉÏµÄÃ¿¸öÉè±¸tracerouteÒª²â3´Î¡£Êä³ö½á¹ûÖÐ°üÀ¨Ã¿´Î²âÊÔµÄÊ±¼ä(ms)ºÍÉè±¸µÄÃû³Æ£¨ÈçÓÐµÄ»°£©¼°ÆäIPµØÖ·¡£
+
+
 
 ÔÚ´ó¶àÊýÇé¿öÏÂ£¬ÎÒÃÇ»áÔÚlinuxÖ÷»úÏµÍ³ÏÂ£¬Ö±½ÓÖ´ÐÐÃüÁîÐÐ£º
 traceroute hostname
+
 ¶øÔÚWindowsÏµÍ³ÏÂÊÇÖ´ÐÐtracertµÄÃüÁî£º
 tracert hostname
+
+
 
 1.ÃüÁî¸ñÊ½£º
 traceroute[²ÎÊý][Ö÷»ú]
 
+
 2.ÃüÁî¹¦ÄÜ£º
 tracerouteÖ¸ÁîÈÃÄã×·×ÙÍøÂçÊý¾Ý°üµÄÂ·ÓÉÍ¾¾¶£¬Ô¤ÉèÊý¾Ý°ü´óÐ¡ÊÇ40Bytes£¬ÓÃ»§¿ÉÁíÐÐÉèÖÃ¡£
+
+
 ¾ßÌå²ÎÊý¸ñÊ½£ºtraceroute [-dFlnrvx][-f<´æ»îÊýÖµ>][-g<Íø¹Ø>...][-i<ÍøÂç½çÃæ>][-m<´æ»îÊýÖµ>][-p<Í¨ÐÅ¶Ë¿Ú>][-s<À´Ô´µØÖ·>][-t<·þÎñÀàÐÍ>][-w<³¬Ê±ÃëÊý>][Ö÷»úÃû³Æ»òIPµØÖ·][Êý¾Ý°ü´óÐ¡]
 
+
+
 3.ÃüÁî²ÎÊý£º
+
 -d Ê¹ÓÃSocket²ã¼¶µÄÅÅ´í¹¦ÄÜ¡£
+
 -f ÉèÖÃµÚÒ»¸ö¼ì²âÊý¾Ý°üµÄ´æ»îÊýÖµTTLµÄ´óÐ¡¡£
+
 -F ÉèÖÃÎðÀë¶ÏÎ»¡£
+
 -g ÉèÖÃÀ´Ô´Â·ÓÉÍø¹Ø£¬×î¶à¿ÉÉèÖÃ8¸ö¡£
+
 -i Ê¹ÓÃÖ¸¶¨µÄÍøÂç½çÃæËÍ³öÊý¾Ý°ü¡£
+
 -I Ê¹ÓÃICMP»ØÓ¦È¡´úUDP×ÊÁÏÐÅÏ¢¡£
+
 -m ÉèÖÃ¼ì²âÊý¾Ý°üµÄ×î´ó´æ»îÊýÖµTTLµÄ´óÐ¡¡£
+
 -n Ö±½ÓÊ¹ÓÃIPµØÖ·¶ø·ÇÖ÷»úÃû³Æ¡£
+
 -p ÉèÖÃUDP´«ÊäÐ­ÒéµÄÍ¨ÐÅ¶Ë¿Ú¡£
+
 -r ºöÂÔÆÕÍ¨µÄRouting Table£¬Ö±½Ó½«Êý¾Ý°üËÍµ½Ô¶¶ËÖ÷»úÉÏ¡£
+
 -s ÉèÖÃ±¾µØÖ÷»úËÍ³öÊý¾Ý°üµÄIPµØÖ·¡£
+
 -t ÉèÖÃ¼ì²âÊý¾Ý°üµÄTOSÊýÖµ¡£
+
 -v ÏêÏ¸ÏÔÊ¾Ö¸ÁîµÄÖ´ÐÐ¹ý³Ì¡£
+
 -w ÉèÖÃµÈ´ýÔ¶¶ËÖ÷»ú»Ø±¨µÄÊ±¼ä¡£
+
 -x ¿ªÆô»ò¹Ø±ÕÊý¾Ý°üµÄÕýÈ·ÐÔ¼ìÑé¡£
+
+
 
 
 
@@ -38,10 +69,18 @@ tracerouteÖ¸ÁîÈÃÄã×·×ÙÍøÂçÊý¾Ý°üµÄÂ·ÓÉÍ¾¾¶£¬Ô¤ÉèÊý¾Ý°ü´óÐ¡ÊÇ40Bytes£¬ÓÃ»§¿ÉÁíÐÐÉ
 
 traceroute www.baidu.com 
 
-¼ÇÂ¼°´ÐòÁÐºÅ´Ó1¿ªÊ¼£¬Ã¿¸ö¼ÍÂ¼¾ÍÊÇÒ»Ìø £¬Ã¿Ìø±íÊ¾Ò»¸öÍø¹Ø£¬ÎÒÃÇ¿´µ½Ã¿ÐÐÓÐÈý¸öÊ±¼ä£¬µ¥Î»ÊÇ ms£¬ÆäÊµ¾ÍÊÇ-qµÄÄ¬ÈÏ²ÎÊý¡£Ì½²âÊý¾Ý°üÏòÃ¿¸öÍø¹Ø·¢ËÍÈý¸öÊý¾Ý°üºó£¬Íø¹ØÏìÓ¦ºó·µ»ØµÄÊ±¼ä£»Èç¹ûÄúÓÃ traceroute -q 4 www.58.com £¬±íÊ¾ÏòÃ¿¸öÍø¹Ø·¢ËÍ4¸öÊý¾Ý°ü¡£
+
+¼ÇÂ¼°´ÐòÁÐºÅ´Ó1¿ªÊ¼£¬Ã¿¸ö¼ÍÂ¼¾ÍÊÇÒ»Ìø £¬Ã¿Ìø±íÊ¾Ò»¸öÍø¹Ø£¬ÎÒÃÇ¿´µ½Ã¿ÐÐÓÐÈý¸öÊ±¼ä£¬µ¥Î»ÊÇ ms£¬ÆäÊµ¾ÍÊÇ-qµÄÄ¬ÈÏ²ÎÊý¡£Ì½²âÊý¾Ý°üÏòÃ¿¸öÍø¹Ø·¢ËÍÈý¸öÊý¾Ý°üºó£¬Íø¹ØÏìÓ¦ºó·µ»ØµÄÊ±¼ä£»
+Èç¹ûÄúÓÃ traceroute -q 4 www.58.com £¬±íÊ¾ÏòÃ¿¸öÍø¹Ø·¢ËÍ4¸öÊý¾Ý°ü¡£
+
 
 ÓÐÊ±ÎÒÃÇtraceroute Ò»Ì¨Ö÷»úÊ±£¬»á¿´µ½ÓÐÒ»Ð©ÐÐÊÇÒÔÐÇºÅ±íÊ¾µÄ¡£³öÏÖÕâÑùµÄÇé¿ö£¬¿ÉÄÜÊÇ·À»ðÇ½·âµôÁËICMPµÄ·µ»ØÐÅÏ¢£¬ËùÒÔÎÒÃÇµÃ²»µ½Ê²Ã´Ïà¹ØµÄÊý¾Ý°ü·µ»ØÊý¾Ý¡£
-ÓÐÊ±ÎÒÃÇÔÚÄ³Ò»Íø¹Ø´¦ÑÓÊ±±È½Ï³¤£¬ÓÐ¿ÉÄÜÊÇÄ³Ì¨Íø¹Ø±È½Ï×èÈû£¬Ò²¿ÉÄÜÊÇÎïÀíÉè±¸±¾ÉíµÄÔ­Òò¡£µ±È»Èç¹ûÄ³Ì¨DNS³öÏÖÎÊÌâÊ±£¬²»ÄÜ½âÎöÖ÷»úÃû¡¢ÓòÃûÊ±£¬Ò²»á ÓÐÑÓÊ±³¤µÄÏÖÏó£»Äú¿ÉÒÔ¼Ó-n ²ÎÊýÀ´±ÜÃâDNS½âÎö£¬ÒÔIP¸ñÊ½Êä³öÊý¾Ý¡£
+
+ÓÐÊ±ÎÒÃÇÔÚÄ³Ò»Íø¹Ø´¦ÑÓÊ±±È½Ï³¤£¬ÓÐ¿ÉÄÜÊÇÄ³Ì¨Íø¹Ø±È½Ï×èÈû£¬Ò²¿ÉÄÜÊÇÎïÀíÉè±¸±¾ÉíµÄÔ­Òò¡£µ±È»Èç¹ûÄ³Ì¨DNS³öÏÖÎÊÌâÊ±£¬²»ÄÜ½âÎöÖ÷»úÃû¡¢ÓòÃûÊ±£¬Ò²»á ÓÐÑÓÊ±³¤µÄÏÖÏó£»
+
+Äú¿ÉÒÔ¼Ó-n ²ÎÊýÀ´±ÜÃâDNS½âÎö£¬ÒÔIP¸ñÊ½Êä³öÊý¾Ý¡£
+
+
 
 ÌøÊýÉèÖÃ
 traceroute -m 10 www.baidu.com
@@ -49,17 +88,32 @@ traceroute -m 10 www.baidu.com
 ÏÔÊ¾IPµØÖ·£¬²»²éÖ÷»úÃû
 traceroute -n www.baidu.com
 
+
+
 Ì½²â°üÊ¹ÓÃµÄ»ù±¾UDP¶Ë¿ÚÉèÖÃ6888
+
 traceroute -p 6888 www.baidu.com
 
+
+
 °ÑÌ½²â°üµÄ¸öÊýÉèÖÃÎªÖµ4
+
 traceroute -q 4 www.baidu.com
+
+
 
 ÈÆ¹ýÕý³£µÄÂ·ÓÉ±í£¬Ö±½Ó·¢ËÍµ½ÍøÂçÏàÁ¬µÄÖ÷»ú
 traceroute -r www.baidu.com
 
+
+
 °Ñ¶ÔÍâ·¢Ì½²â°üµÄµÈ´ýÏìÓ¦Ê±¼äÉèÖÃÎª3Ãë
+
 traceroute -w 3 www.baidu.com
+
+
+
+
 
 
 
@@ -67,7 +121,9 @@ traceroute -w 3 www.baidu.com
 
 TracerouteµÄ¹¤×÷Ô­Àí£º
 
+
 Traceroute×î¼òµ¥µÄ»ù±¾ÓÃ·¨ÊÇ£ºtraceroute hostname
+
 
 Traceroute³ÌÐòµÄÉè¼ÆÊÇÀûÓÃICMP¼°IP headerµÄTTL£¨Time To Live£©À¸Î»£¨field£©¡£Ê×ÏÈ£¬tracerouteËÍ³öÒ»¸öTTLÊÇ1µÄIP datagram£¨ÆäÊµ£¬Ã¿´ÎËÍ³öµÄÎª3¸ö40×Ö½ÚµÄ°ü£¬°üÀ¨Ô´µØÖ·£¬Ä¿µÄµØÖ·ºÍ°ü·¢³öµÄÊ±¼ä±êÇ©£©µ½Ä¿µÄµØ£¬µ±Â·¾¶ÉÏµÄµÚÒ»¸öÂ·ÓÉÆ÷£¨router£©ÊÕµ½Õâ¸ödatagramÊ±£¬Ëü½«TTL¼õ1¡£´ËÊ±£¬TTL±äÎª0ÁË£¬ËùÒÔ¸ÃÂ·ÓÉÆ÷»á½«´Ëdatagram¶ªµô£¬²¢ËÍ»ØÒ»¸ö¡¸ICMP time exceeded¡¹ÏûÏ¢£¨°üÀ¨·¢IP°üµÄÔ´µØÖ·£¬IP°üµÄËùÓÐÄÚÈÝ¼°Â·ÓÉÆ÷µÄIPµØÖ·£©£¬traceroute ÊÕµ½Õâ¸öÏûÏ¢ºó£¬±ãÖªµÀÕâ¸öÂ·ÓÉÆ÷´æÔÚÓÚÕâ¸öÂ·¾¶ÉÏ£¬½Ó×Åtraceroute ÔÙËÍ³öÁíÒ»¸öTTLÊÇ2 µÄdatagram£¬·¢ÏÖµÚ2 ¸öÂ·ÓÉÆ÷...... traceroute Ã¿´Î½«ËÍ³öµÄdatagramµÄTTL ¼Ó1À´·¢ÏÖÁíÒ»¸öÂ·ÓÉÆ÷£¬Õâ¸öÖØ¸´µÄ¶¯×÷Ò»Ö±³ÖÐøµ½Ä³¸ödatagram µÖ´ïÄ¿µÄµØ¡£µ±datagramµ½´ïÄ¿µÄµØºó£¬¸ÃÖ÷»ú²¢²»»áËÍ»ØICMP time exceededÏûÏ¢£¬ÒòÎªËüÒÑÊÇÄ¿µÄµØÁË£¬ÄÇÃ´tracerouteÈçºÎµÃÖªÄ¿µÄµØµ½´ïÁËÄØ£¿
 

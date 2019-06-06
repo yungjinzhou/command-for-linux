@@ -118,6 +118,8 @@ tcpdump -ttttnnvvS
 
 
 
+tcpdump host hostname -w 2.cap
+
 查看整个网络的数据包
 要获取整个网络的数据包，在终端执行下面命令：
 
