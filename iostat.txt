@@ -1,9 +1,11 @@
 http://www.cnblogs.com/peida/archive/2012/12/28/2837345.html
 
+
 Linux系统中的 iostat是I/O statistics（输入/输出统计）的缩写，iostat工具将对系统的磁盘操作活动进行监视。
 它的特点是汇报磁盘活动统计情况，同时也会汇报出CPU使用情况。
 
 iostat属于sysstat软件包。可以用yum install sysstat 直接安装。
+
 
 
 1．命令格式：
@@ -25,10 +27,13 @@ iostat[参数][时间][次数]
 -V 显示版本信息
 
 
+
 4．使用实例：
 
 实例1：显示所有设备负载情况
 iostat
+
+ -x 1
 
 输出：
 Linux 2.6.18-128.el5 (CT1186)   2012年12月28日
@@ -68,30 +73,53 @@ cpu属性值说明：
 如果%idle值高但系统响应慢时，有可能是CPU等待分配内存，此时应加大内存容量。
 %idle值如果持续低于10，那么系统的CPU处理能力相对较低，表明系统中最需要解决的资源是CPU。
 
+
 disk属性值说明：
+
 rrqm/s:  每秒进行 merge 的读操作数目。即 rmerge/s
+
 wrqm/s:  每秒进行 merge 的写操作数目。即 wmerge/s
+
 r/s:  每秒完成的读 I/O 设备次数。即 rio/s
+
 w/s:  每秒完成的写 I/O 设备次数。即 wio/s
+
 rsec/s:  每秒读扇区数。即 rsect/s
+
 wsec/s:  每秒写扇区数。即 wsect/s
+
 rkB/s:  每秒读K字节数。是 rsect/s 的一半，因为每扇区大小为512字节。
+
 wkB/s:  每秒写K字节数。是 wsect/s 的一半。
+
 avgrq-sz:  平均每次设备I/O操作的数据大小 (扇区)。
+
 avgqu-sz:  平均I/O队列长度。
+
 await:  平均每次设备I/O操作的等待时间 (毫秒)。
+
 svctm: 平均每次设备I/O操作的服务时间 (毫秒)。
+
 %util:  一秒中有百分之多少的时间用于 I/O 操作，即被io消耗的cpu百分比
 
+
+
 备注：
-如果 %util 接近 100%，说明产生的I/O请求太多，I/O系统已经满负荷，该磁盘可能存在瓶颈。
-如果 svctm 比较接近 await，说明 I/O 几乎没有等待时间；
-如果 await 远大于 svctm，说明I/O 队列太长，io响应太慢，则需要进行必要优化。
-如果avgqu-sz比较大，也表示有当量io在等待。
 
 如果 %util 接近 100%，说明产生的I/O请求太多，I/O系统已经满负荷，该磁盘可能存在瓶颈。
+
+如果 svctm 比较接近 await，说明 I/O 几乎没有等待时间；
+
+如果 await 远大于 svctm，说明I/O 队列太长，io响应太慢，则需要进行必要优化。
+
+如果avgqu-sz比较大，也表示有当量io在等待。
+
+
+
+
 idle小于70% IO压力就较大了，一般读取速度有较多的wait。
 同时可以结合vmstat 查看查看b参数(等待资源的进程数)和wa参数(IO等待所占用的CPU时间的百分比，高过30%时IO压力高)。
+
 
 
 
@@ -101,16 +129,20 @@ iostat 2 3
 每隔 2秒刷新显示，且显示3次
 
 
+
 实例3：显示指定磁盘信息
 iostat -d sda1
+
 
 
 实例4：显示tty和Cpu信息
 iostat -t
 
 
+
 实例5：以M为单位显示所有信息
 iostat -m
+
 
 
 实例6：查看TPS和吞吐量信息
@@ -137,6 +169,7 @@ kB_read：读取的总数据量；kB_wrtn：写入的总数量数据量；这些单位都为Kilobytes。
 
 
 
+
 实例7：查看设备使用率（%util）、响应时间（await）
 iostat -d -x -k 1 1
 -d 显示磁盘使用情况
@@ -145,6 +178,20 @@ iostat -d -x -k 1 1
 
 
 
+
 实例8：查看cpu状态
 iostat[参数][时间][次数]
 iostat -c 1 3
+
+
+实例9 iostat -x 1每秒运行一次，查看网络，磁盘i/o状况
+
+
+常见用法
+
+iostat -d -k 1 10 ? ? ? ? #查看TPS和吞吐量信息(磁盘读写速度单位为KB
+
+iostat -d -m 2 ? ? ? ? ? ?#查看TPS和吞吐量信息(磁盘读写速度单位为MB)
+
+iostat -d -x -k 1 10 ? ? ?#查看设备使用率（%util）、响应时间（await） 
+iostat -c 1 10 #查看cpu状态
