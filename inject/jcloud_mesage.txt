@@ -4,21 +4,8 @@
 
 
 
-[work@sd3-jn-tnm-tmc25 tmp]$ ll /tmp/tencent_vod_meituan_store_new.tar.gz
 
 
-
-
-
-
-
-split -l 100000 ./../bili.inject.url.finish -d -a 2 10w_
-
-0 18 * * * kill -s SIGTERM `ps uax | grep mss_to_jcloud | grep -v grep | awk '{print $2}'`
-
-nohup python2.7 bili_mss_to_jcloud_storage.py /home/yangjinzhou/bili_task/1w/1w_04 &
-
-curl myip.ipip.net ²é¿´ÍâÍøip
 
 
 
