@@ -3,9 +3,6 @@ git log
 git show commit_id
 
 
-git stash保存当前进度
-
-git stash pop恢复进度，并删除缓存
 
 
 
@@ -34,9 +31,12 @@ git clone ""    git自动追踪当前分支与对应远程分支
 
 git merge dev    将分支dev合并到当前分支中，自动进行新的提交：
 
+
 git stash 保存当前未提交进度，切换分支
 
 git stash pop，切换回此分支，删除缓存，恢复未提交进度
+
+
 
 
 配置别名
