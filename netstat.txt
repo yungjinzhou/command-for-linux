@@ -180,3 +180,10 @@ netstat -nat |awk '{print $6}'|sort|uniq -c|sort -rn
 
 获得访问前10位的ip地址
 awk '{print $1}' access.log |sort|uniq -c|sort -nr|head -10
+
+
+
+
+
+获取8080端口的连接
+netstat -an|awk '/tcp/ {print $6}'|sort|uniq -c
