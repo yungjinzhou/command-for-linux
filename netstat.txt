@@ -50,21 +50,32 @@ Proto显示连接使用的协议,RefCnt表示连接到本套接口上的进程号,Types显示套接口的类型
 
 
 1. 列出所有端口 (包括监听和未监听的)
-  列出所有端口 netstat -a
-  列出所有 tcp 端口 netstat -at
-  列出所有 udp 端口 netstat -au
+  
+列出所有端口 netstat -a
+  
+列出所有 tcp 端口 netstat -at
+  
+列出所有 udp 端口 netstat -au
  
 
+
 2. 列出所有处于监听状态的 Sockets
-  只显示监听端口 netstat -l
-  只列出所有监听 tcp 端口 netstat -lt
-  只列出所有监听 udp 端口 netstat -lu
-  只列出所有监听 UNIX 端口 netstat -lx
+  
+只显示监听端口 netstat -l
+  
+只列出所有监听 tcp 端口 netstat -lt
+  
+只列出所有监听 udp 端口 netstat -lu
+  
+只列出所有监听 UNIX 端口 netstat -lx
+
 
 
 3. 显示每个协议的统计信息
-  显示所有端口的统计信息 netstat -s
-  显示 TCP 或 UDP 端口的统计信息 netstat -st 或 -su
+  
+显示所有端口的统计信息 netstat -s
+  
+显示 TCP 或 UDP 端口的统计信息 netstat -st 或 -su
 
 
 
@@ -185,5 +196,9 @@ awk '{print $1}' access.log |sort|uniq -c|sort -nr|head -10
 
 
 
-获取8080端口的连接
-netstat -an|awk '/tcp/ {print $6}'|sort|uniq -c
+获取8080端口的连接并计数
+netstat -atnpl | grep 8080 | wc -l
+
+netstat -an | awk '/tcp/ {print $6}' | sort | uniq -c
+
+
