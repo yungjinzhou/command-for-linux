@@ -20,3 +20,9 @@ curl -x 'http://vivek:myPasswordHere@10.12.249.194:3128' -v -O https://dl.cyberc
 
 curl -L url   -L/--location      Follow Location: hints (H)
     --location-trusted Follow Location: and send auth to other hosts (H)
+
+
+curl -vo /dev/null http://test001.cdnlnkd.com/a.jpg -x test001.cdnlnkd.com.cdn.cloudflare.net:80  
+删除缓存后第一次请求 CF-Cache-Status: MISS， 第二次请求CF-Cache-Status: HIT
+`-v`参数可以显示一次http通信的整个过程，包括端口连接和http request头信息。
+如果要把这个网页保存下来，可以使用`-o`参数，这就相当于使用wget命令了。 $ curl -o [文件名] www.sina.com
