@@ -84,3 +84,16 @@ upstream  abc.com  {
                 server   1.1.1.2:80   down;-----该ip下线   
                 server  1.1.1..3:80      max_fails=3  fail_timeout=20s;---------失败3次后暂停该服务器20s后在启动
               }
+
+
+
+
+
+
+
+
+
+
+
+
+
