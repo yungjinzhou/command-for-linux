@@ -69,7 +69,8 @@ set cc=64
 set cursorline                                                     
                                                                    
 " 设置各种缩进                                                     
-set tabstop=4                                                      
+set tabstop=4
+set mouse-=a                                                      
 set softtabstop=4                                                  
 set shiftwidth=4                                                   
 set autoindent                                                     

@@ -4,6 +4,12 @@
 
 cat /proc/sys/net/ipv4/ip_forward
 这个改成1（尝试可行）
+终端下输入sysctl -w net.ipv4.ip_forward=1
+或者
+echo 1 > /proc/sys/net/ipv4/ip_forward
+
+
+
 
 网络搜索的办法
 编辑虚拟机文件：vim /etc/sysctl.conf
@@ -122,7 +128,7 @@ docker rename old容器名  new容器名
 
 
 备份
-docker commit -p 30b8f18f20b4 container-backup
+docker commit 30b8f18f20b4 container-backup
 docker save -o ~/container-backup.tar container-backup
 
 恢复
