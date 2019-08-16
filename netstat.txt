@@ -210,3 +210,9 @@ netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'
 
 
 
+netstat -an | grep TIMER_WAIT | awk '/tcp/ {print $5}' | sort | uniq -c
+列出该机器连接的ip及相应的连接数
+
+
+
+
