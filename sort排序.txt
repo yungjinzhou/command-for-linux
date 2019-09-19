@@ -2,17 +2,28 @@
 
  
 
-sort将文件的每一行作为一个单位，相互比较，比较原则是从首字符向后，依次按ASCII码值进行比较，最后将他们按升序输出。sort seq.txt
+sort将文件的每一行作为一个单位，相互比较，比较原则是从首字符向后，依次按ASCII码值进行比较，最后将他们按升序输出。
+sort seq.txt
+
+
 sort的-u选项
 它的作用很简单，就是在输出行中去除重复行。sort -u seq.txt
 
+
+
 sort的-r选项
 sort默认的排序方式是升序，如果想改成降序，就加个-r就搞定了。sort -r number.txt
+
+
 
 sort的-o选项
 
 由于sort默认是把结果输出到标准输出，所以需要用重定向才能将结果写入文件，形如sort filename > newfile。
 但是，如果你想把排序结果输出到原文件中，用重定向可就不行了。可以用-o
+
+
+
+
 sort -r number.txt -o number.txt
 
 
