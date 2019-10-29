@@ -1,4 +1,5 @@
 FROM centos:6.9
+
 RUN yum install -y epel-release wget && \
     yum install -y gcc vim git rsyslog lsof lftp && \
     rpm -i https://centos6.iuscommunity.org/ius-release.rpm && \
