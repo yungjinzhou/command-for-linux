@@ -216,3 +216,10 @@ netstat -an | grep TIMER_WAIT | awk '/tcp/ {print $5}' | sort | uniq -c
 
 
 
+[root@localhost ~]# netstat -nlp |grep LISTEN   //查看当前所有监听端口·
+[root@localhost ~]# netstat -nlp |grep 80   //查看所有80端口使用情况·
+[root@localhost ~]# netstat -an | grep 3306   //查看所有3306端口使用情况·
+
+
+
+
