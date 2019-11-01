@@ -8,8 +8,8 @@ ADD id_rsa /root/.ssh/id_rsa
 ADD id_rsa.pub /root/.ssh/id_rsa.pub
 RUN rpm -i https://centos6.iuscommunity.org/ius-release.rpm && \
     yum --enablerepo=ius-archive install -y python27 python27-pip python27-libs python27-devel python27-setuptools && \
-    ssh-keyscan 10.20.0.60 >> /root/.ssh/known_hosts && \
-    git clone git@10.20.0.60:weiqiu/apm.git /home/work/apm
+    ssh-keyscan 12.1.1 >> /root/.ssh/known_hosts && \
+    git clone git@1.2.2.6:test/apm.git /home/work/apm
 ADD NSUPDATE.py /home/work/apm/lib/apm/constants/
 ADD NODE.py /home/work/apm/lib/apm/constants/
 RUN cd /home/work/apm/env/ && sh install_env.sh && \
@@ -18,4 +18,4 @@ RUN cd /home/work/apm/env/ && sh install_env.sh && \
     echo '/home/work/apm/redis-2.6.13/bin/redis-server /home/work/apm/redis-2.6.13/conf/redis.master.conf' >> /home/work/apm/prepare.sh && \
     echo '/home/work/apm/redis-2.6.13/bin/redis-server /home/work/apm/redis-2.6.13/conf/sentinel.conf --sentinel' >> /home/work/apm/prepare.sh && \
     echo 'service rsyslog restart' >> /home/work/apm/prepare.sh && \
-    echo 'echo "10.25.0.160  dev-boss-api.isurecloud.com" >> /etc/hosts' >> /home/work/apm/prepare.sh
+    echo 'echo "1.2.1.1  dev-boss-api.baidu.com" >> /etc/hosts' >> /home/work/apm/prepare.sh
