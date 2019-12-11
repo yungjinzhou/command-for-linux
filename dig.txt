@@ -2,67 +2,119 @@ dig£¨ÓòÐÅÏ¢ËÑË÷Æ÷£©ÃüÁîÊÇÒ»¸öÓÃÓÚÑ¯ÎÊ DNS ÓòÃû·þÎñÆ÷µÄÁé»îµÄ¹¤¾ß¡£ËüÖ´ÐÐ DNS ËÑË
 
 
 
+
+
+
 digÃüÁîÓÃ·¨
+
 dig [@server] [-b address] [-c class] [-f filename] [-k filename] [ -n ][-p port#] [-t type] [-x addr] [-y name:key] [name] [type] [class] [queryopt...]
 dig [-h]
 dig [global-queryopt...] [query...]
 
+
 digÃüÁîÑ¡Ïî
--b address	ÉèÖÃËùÒªÑ¯ÎÊµØÖ·µÄÔ´ IP µØÖ·¡£Õâ±ØÐëÊÇÖ÷»úÍøÂç½Ó¿ÚÉÏµÄÄ³Ò»ºÏ·¨µÄµØÖ·¡£
--c class	È±Ê¡²éÑ¯Àà£¨IN for internet£©ÓÉÑ¡Ïî -c ÖØÉè¡£class ¿ÉÒÔÊÇÈÎºÎºÏ·¨Àà£¬±ÈÈç²éÑ¯ Hesiod ¼ÇÂ¼µÄ HS Àà»ò²éÑ¯ CHAOSNET ¼ÇÂ¼µÄ CH Àà¡£
--f filename	Ê¹ dig ÔÚÅú´¦ÀíÄ£Ê½ÏÂÔËÐÐ£¬Í¨¹ý´ÓÎÄ¼þ filename ¶ÁÈ¡Ò»ÏµÁÐËÑË÷ÇëÇó¼ÓÒÔ´¦Àí¡£ÎÄ¼þ°üº¬Ðí¶à²éÑ¯£»Ã¿ÐÐÒ»¸ö¡£ÎÄ¼þÖÐµÄÃ¿Ò»Ïî¶¼Ó¦¸ÃÒÔºÍÊ¹ÓÃÃüÁîÐÐ½Ó¿Ú¶Ô dig µÄ²éÑ¯ÏàÍ¬µÄ·½·¨À´×éÖ¯¡£
--h	µ±Ê¹ÓÃÑ¡Ïî -h Ê±£¬ÏÔÊ¾Ò»¸ö¼ò¶ÌµÄÃüÁîÐÐ²ÎÊýºÍÑ¡ÏîÕªÒª¡£
--k filename	ÒªÇ©ÊðÓÉ dig ·¢ËÍµÄ DNS ²éÑ¯ÒÔ¼°¶ÔËüÃÇÊ¹ÓÃÊÂÎñÇ©Ãû£¨TSIG£©µÄÏìÓ¦£¬ÓÃ Ñ¡Ïî -k Ö¸¶¨ TSIG ÃÜÔ¿ÎÄ¼þ¡£
--n	È±Ê¡Çé¿öÏÂ£¬Ê¹ÓÃ IP6.ARPA ÓòºÍ RFC2874 ¶¨ÒåµÄ¶þ½øÖÆ±êºÅËÑË÷ IPv6 µØÖ·¡£ÎªÁËÊ¹ÓÃ¸üÔçµÄ¡¢ Ê¹ÓÃ IP6.INT ÓòºÍ nibble ±êÇ©µÄ RFC1886 ·½·¨£¬Ö¸¶¨ Ñ¡Ïî -n£¨nibble£©¡£
--p port#	Èç¹ûÐèÒª²éÑ¯Ò»¸ö·Ç±ê×¼µÄ¶Ë¿ÚºÅ£¬ÔòÊ¹ÓÃÑ¡Ïî -p¡£port# ÊÇ dig ½«·¢ËÍÆä²éÑ¯µÄ¶Ë¿ÚºÅ£¬¶ø²»ÊÇ±ê×¼µÄ DNS ¶Ë¿ÚºÅ 53¡£¸ÃÑ¡Ïî¿ÉÓÃÓÚ²âÊÔÒÑÔÚ·Ç±ê×¼¶Ë¿ÚºÅÉÏÅäÖÃ³ÉÕìÌý²éÑ¯µÄÓòÃû·þÎñÆ÷¡£
--t type	ÉèÖÃ²éÑ¯ÀàÐÍÎª type¡£¿ÉÒÔÊÇ BIND9 Ö§³ÖµÄÈÎÒâÓÐÐ§²éÑ¯ÀàÐÍ¡£È±Ê¡²éÑ¯ÀàÐÍÊÇ A£¬³ý·ÇÌá¹© -x Ñ¡ÏîÀ´Ö¸Ê¾Ò»¸öÄæÏò²éÑ¯¡£Í¨¹ýÖ¸¶¨ AXFR µÄ type ¿ÉÒÔÇëÇóÒ»¸öÇøÓò´«Êä¡£µ±ÐèÒªÔöÁ¿ÇøÓò´«Êä£¨IXFR£©Ê±£¬type ÉèÖÃÎª ixfr=N¡£ÔöÁ¿ÇøÓò´«Êä½«°üº¬×Ô´ÓÇøÓòµÄ SOA ¼ÇÂ¼ÖÐµÄÐòÁÐºÅ¸ÄÎª N Ö®ºó¶ÔÇøÓòËù×öµÄ¸ü¸Ä¡£
--x addr	ÄæÏò²éÑ¯£¨½«µØÖ·Ó³Éäµ½Ãû³Æ£©¿ÉÒÔÍ¨¹ý -x Ñ¡Ïî¼ÓÒÔ¼ò»¯¡£addr ÊÇÒ»¸ö ÒÔÐ¡ÊýµãÎª½çµÄ IPv4 µØÖ·»òÃ°ºÅÎª½çµÄ IPv6 µØÖ·¡£µ±Ê¹ÓÃÕâ¸öÑ¡ÏîÊ±£¬ÎÞÐèÌá¹© name¡¢class ºÍ type ²ÎÊý¡£dig ×Ô¶¯ÔËÐÐÀàËÆ11.12.13.10.in-addr.arpa µÄÓòÃû²éÑ¯£¬²¢·Ö±ðÉèÖÃ²éÑ¯ÀàÐÍºÍÀàÎª PTR ºÍ IN¡£
--y name:key	Äú¿ÉÒÔÍ¨¹ýÃüÁîÐÐÉÏµÄ -y Ñ¡ÏîÖ¸¶¨ TSIG ÃÜÔ¿£»name ÊÇ TSIG ÃÜÂëµÄÃû³Æ£¬key ÊÇÊµ¼ÊµÄÃÜÂë¡£ÃÜÂëÊÇ 64 Î»¼ÓÃÜ×Ö·û´®£¬Í¨³£ÓÉ dnssec-keygen£¨8£©Éú³É¡£µ±ÔÚ¶àÓÃ»§ÏµÍ³ÉÏÊ¹ÓÃÑ¡Ïî -y Ê±Ó¦¸Ã½÷É÷£¬ÒòÎªÃÜÂëÔÚ ps£¨1£©µÄÊä³ö»ò shell µÄÀúÊ·ÎÄ¼þÖÐ¿ÉÄÜÊÇ¿É¼ûµÄ¡£µ±Í¬Ê±Ê¹ÓÃ dig ºÍ TSCG ÈÏÖ¤Ê±£¬±»²éÑ¯µÄÃû³Æ·þÎñÆ÷ÐèÒªÖªµÀÃÜÂëºÍ½âÂë¹æÔò¡£ÔÚ BIND ÖÐ£¬Í¨¹ýÌá¹©ÕýÈ·µÄÃÜÂëºÍ named.conf ÖÐµÄ·þÎñÆ÷ÉùÃ÷ÊµÏÖ¡£
+
+-b address	
+ÉèÖÃËùÒªÑ¯ÎÊµØÖ·µÄÔ´ IP µØÖ·¡£Õâ±ØÐëÊÇÖ÷»úÍøÂç½Ó¿ÚÉÏµÄÄ³Ò»ºÏ·¨µÄµØÖ·¡£
+
+-c class	
+È±Ê¡²éÑ¯Àà£¨IN for internet£©ÓÉÑ¡Ïî -c ÖØÉè¡£class ¿ÉÒÔÊÇÈÎºÎºÏ·¨Àà£¬±ÈÈç²éÑ¯ Hesiod ¼ÇÂ¼µÄ HS Àà»ò²éÑ¯ CHAOSNET ¼ÇÂ¼µÄ CH Àà¡£
+
+-f filename	
+Ê¹ dig ÔÚÅú´¦ÀíÄ£Ê½ÏÂÔËÐÐ£¬Í¨¹ý´ÓÎÄ¼þ filename ¶ÁÈ¡Ò»ÏµÁÐËÑË÷ÇëÇó¼ÓÒÔ´¦Àí¡£ÎÄ¼þ°üº¬Ðí¶à²éÑ¯£»Ã¿ÐÐÒ»¸ö¡£ÎÄ¼þÖÐµÄÃ¿Ò»Ïî¶¼Ó¦¸ÃÒÔºÍÊ¹ÓÃÃüÁîÐÐ½Ó¿Ú¶Ô dig µÄ²éÑ¯ÏàÍ¬µÄ·½·¨À´×éÖ¯¡£
+
+-h	
+µ±Ê¹ÓÃÑ¡Ïî -h Ê±£¬ÏÔÊ¾Ò»¸ö¼ò¶ÌµÄÃüÁîÐÐ²ÎÊýºÍÑ¡ÏîÕªÒª¡£
+
+-k filename	
+ÒªÇ©ÊðÓÉ dig ·¢ËÍµÄ DNS ²éÑ¯ÒÔ¼°¶ÔËüÃÇÊ¹ÓÃÊÂÎñÇ©Ãû£¨TSIG£©µÄÏìÓ¦£¬ÓÃ Ñ¡Ïî -k Ö¸¶¨ TSIG ÃÜÔ¿ÎÄ¼þ¡£
+
+-n	
+È±Ê¡Çé¿öÏÂ£¬Ê¹ÓÃ IP6.ARPA ÓòºÍ RFC2874 ¶¨ÒåµÄ¶þ½øÖÆ±êºÅËÑË÷ IPv6 µØÖ·¡£ÎªÁËÊ¹ÓÃ¸üÔçµÄ¡¢ Ê¹ÓÃ IP6.INT ÓòºÍ nibble ±êÇ©µÄ RFC1886 ·½·¨£¬Ö¸¶¨ Ñ¡Ïî -n£¨nibble£©¡£
+
+-p port#	
+Èç¹ûÐèÒª²éÑ¯Ò»¸ö·Ç±ê×¼µÄ¶Ë¿ÚºÅ£¬ÔòÊ¹ÓÃÑ¡Ïî -p¡£port# ÊÇ dig ½«·¢ËÍÆä²éÑ¯µÄ¶Ë¿ÚºÅ£¬¶ø²»ÊÇ±ê×¼µÄ DNS ¶Ë¿ÚºÅ 53¡£¸ÃÑ¡Ïî¿ÉÓÃÓÚ²âÊÔÒÑÔÚ·Ç±ê×¼¶Ë¿ÚºÅÉÏÅäÖÃ³ÉÕìÌý²éÑ¯µÄÓòÃû·þÎñÆ÷¡£
+
+-t type	
+ÉèÖÃ²éÑ¯ÀàÐÍÎª type¡£¿ÉÒÔÊÇ BIND9 Ö§³ÖµÄÈÎÒâÓÐÐ§²éÑ¯ÀàÐÍ¡£È±Ê¡²éÑ¯ÀàÐÍÊÇ A£¬³ý·ÇÌá¹© -x Ñ¡ÏîÀ´Ö¸Ê¾Ò»¸öÄæÏò²éÑ¯¡£Í¨¹ýÖ¸¶¨ AXFR µÄ type ¿ÉÒÔÇëÇóÒ»¸öÇøÓò´«Êä¡£µ±ÐèÒªÔöÁ¿ÇøÓò´«Êä£¨IXFR£©Ê±£¬type ÉèÖÃÎª ixfr=N¡£ÔöÁ¿ÇøÓò´«Êä½«°üº¬×Ô´ÓÇøÓòµÄ SOA ¼ÇÂ¼ÖÐµÄÐòÁÐºÅ¸ÄÎª N Ö®ºó¶ÔÇøÓòËù×öµÄ¸ü¸Ä¡£
+
+-x addr	
+ÄæÏò²éÑ¯£¨½«µØÖ·Ó³Éäµ½Ãû³Æ£©¿ÉÒÔÍ¨¹ý -x Ñ¡Ïî¼ÓÒÔ¼ò»¯¡£addr ÊÇÒ»¸ö ÒÔÐ¡ÊýµãÎª½çµÄ IPv4 µØÖ·»òÃ°ºÅÎª½çµÄ IPv6 µØÖ·¡£µ±Ê¹ÓÃÕâ¸öÑ¡ÏîÊ±£¬ÎÞÐèÌá¹© name¡¢class ºÍ type ²ÎÊý¡£dig ×Ô¶¯ÔËÐÐÀàËÆ11.12.13.10.in-addr.arpa µÄÓòÃû²éÑ¯£¬²¢·Ö±ðÉèÖÃ²éÑ¯ÀàÐÍºÍÀàÎª PTR ºÍ IN¡£
+
+-y name:key	
+Äú¿ÉÒÔÍ¨¹ýÃüÁîÐÐÉÏµÄ -y Ñ¡ÏîÖ¸¶¨ TSIG ÃÜÔ¿£»name ÊÇ TSIG ÃÜÂëµÄÃû³Æ£¬key ÊÇÊµ¼ÊµÄÃÜÂë¡£ÃÜÂëÊÇ 64 Î»¼ÓÃÜ×Ö·û´®£¬Í¨³£ÓÉ dnssec-keygen£¨8£©Éú³É¡£µ±ÔÚ¶àÓÃ»§ÏµÍ³ÉÏÊ¹ÓÃÑ¡Ïî -y Ê±Ó¦¸Ã½÷É÷£¬ÒòÎªÃÜÂëÔÚ ps£¨1£©µÄÊä³ö»ò shell µÄÀúÊ·ÎÄ¼þÖÐ¿ÉÄÜÊÇ¿É¼ûµÄ¡£µ±Í¬Ê±Ê¹ÓÃ dig ºÍ TSCG ÈÏÖ¤Ê±£¬±»²éÑ¯µÄÃû³Æ·þÎñÆ÷ÐèÒªÖªµÀÃÜÂëºÍ½âÂë¹æÔò¡£ÔÚ BIND ÖÐ£¬Í¨¹ýÌá¹©ÕýÈ·µÄÃÜÂëºÍ named.conf ÖÐµÄ·þÎñÆ÷ÉùÃ÷ÊµÏÖ¡£
+
+
+
+
 
 ²éÑ¯Ñ¡Ïî
+
+
 +[no]tcp ²éÑ¯ÓòÃû·þÎñÆ÷Ê±Ê¹ÓÃ [²»Ê¹ÓÃ] TCP¡£È±Ê¡ÐÐÎªÊÇÊ¹ÓÃ UDP£¬³ý·ÇÊÇ AXFR »ò IXFR ÇëÇó£¬²ÅÊ¹ÓÃ TCP Á¬½Ó¡£
+
 +[no]vc
-²éÑ¯Ãû³Æ·þÎñÆ÷Ê±Ê¹ÓÃ [²»Ê¹ÓÃ] TCP¡£+[no]tcp µÄ±¸ÓÃÓï·¨Ìá¹©ÁËÏòÏÂ¼æÈÝ¡£ vc ´ú±íÐéµçÂ·¡£
+²éÑ¯Ãû³Æ·þÎñÆ÷Ê±Ê¹ÓÃ [²»Ê¹ÓÃ] TCP¡£
++[no]tcp µÄ±¸ÓÃÓï·¨Ìá¹©ÁËÏòÏÂ¼æÈÝ¡£ vc ´ú±íÐéµçÂ·¡£
+
 +[no]ignore
 ºöÂÔ UDP ÏìÓ¦µÄÖÐ¶Ï£¬¶ø²»ÊÇÓÃ TCP ÖØÊÔ¡£È±Ê¡Çé¿öÔËÐÐ TCP ÖØÊÔ¡£
 +domain=somename
 Éè¶¨°üº¬µ¥¸öÓò somename µÄËÑË÷ÁÐ±í£¬ºÃÏñ±» /etc/resolv.conf ÖÐµÄÓòÎ±Ö¸ÁîÖ¸¶¨£¬²¢ÇÒÆôÓÃËÑË÷ÁÐ±í´¦Àí£¬ºÃÏñ¸ø¶¨ÁË +search Ñ¡Ïî¡£
+
 +[no]search
 Ê¹ÓÃ [²»Ê¹ÓÃ] ËÑË÷ÁÐ±í »ò resolv.conf ÖÐµÄÓòÎ±Ö¸Áî£¨Èç¹ûÓÐµÄ»°£©¶¨ÒåµÄËÑË÷ÁÐ±í¡£È±Ê¡Çé¿ö²»Ê¹ÓÃËÑË÷ÁÐ±í¡£
+
 +[no]defname
 ²»½¨Òé¿´×÷ +[no]search µÄÍ¬Òå´Ê¡£
+
 +[no]aaonly
 ¸ÃÑ¡Ïî²»×öÈÎºÎÊÂ¡£ËüÓÃÀ´Ìá¹©¶ÔÉèÖÃ³ÉÎ´ÊµÏÖ½âÎöÆ÷±êÖ¾µÄ dig µÄ¾É°æ±¾µÄ¼æÈÝÐÔ¡£
+
 +[no]adflag
 ÔÚ²éÑ¯ÖÐÉèÖÃ [²»ÉèÖÃ] AD£¨ÕæÊµÊý¾Ý£©Î»¡£Ä¿Ç° AD Î»Ö»ÔÚÏìÓ¦ÖÐÓÐ±ê×¼º¬Òå£¬¶ø²éÑ¯ÖÐÃ»ÓÐ£¬µ«ÊÇ³öÓÚÍêÕûÐÔ¿¼ÂÇÔÚ²éÑ¯ÖÐÕâÖÖÐÔÄÜ¿ÉÒÔÉèÖÃ¡£
+
 +[no]cdflag
 ÔÚÑ¯ÖÐÉèÖÃ [²»ÉèÖÃ] CD£¨¼ì²é½ûÓÃ£©Î»¡£ËüÇëÇó·þÎñÆ÷²»ÔËÐÐÏìÓ¦ÐÅÏ¢µÄ DNSSEC ºÏ·¨ÐÔ¡£
+
 +[no]recursive
 ÇÐ»»²éÑ¯ÖÐµÄ RD£¨ÒªÇóµÝ¹é£©Î»ÉèÖÃ¡£ÔÚÈ±Ê¡Çé¿öÏÂÉèÖÃ¸ÃÎ»£¬Ò²¾ÍÊÇËµ dig Õý³£ÇéÐÎÏÂ·¢ËÍµÝ¹é²éÑ¯¡£µ±Ê¹ÓÃ ²éÑ¯Ñ¡Ïî +nssearch »ò +trace Ê±£¬µÝ¹é×Ô¶¯½ûÓÃ¡£
+
 +[no]nssearch
 Õâ¸öÑ¡Ïî±»ÉèÖÃÊ±£¬dig ÊÔÍ¼Ñ°ÕÒ°üº¬´ýËÑÃû³ÆµÄÍø¶ÎµÄÈ¨ÍþÓòÃû·þÎñÆ÷£¬²¢ÏÔÊ¾Íø¶ÎÖÐÃ¿Ì¨ÓòÃû·þÎñÆ÷µÄ SOA ¼ÇÂ¼¡£
 +[no]trace
 ÇÐ»»Îª´ý²éÑ¯Ãû³Æ´Ó¸ùÃû³Æ·þÎñÆ÷¿ªÊ¼µÄ´úÀíÂ·¾¶¸ú×Ù¡£È±Ê¡Çé¿ö²»Ê¹ÓÃ¸ú×Ù¡£Ò»µ©ÆôÓÃ¸ú×Ù£¬dig Ê¹ÓÃµü´ú²éÑ¯½âÎö´ý²éÑ¯Ãû³Æ¡£Ëü½«°´ÕÕ´Ó¸ù·þÎñÆ÷µÄ²ÎÕÕ£¬ÏÔÊ¾À´×ÔÃ¿Ì¨Ê¹ÓÃ½âÎö²éÑ¯µÄ·þÎñÆ÷µÄÓ¦´ð¡£
+
 +[no]cmd
 Éè¶¨ÔÚÊä³öÖÐÏÔÊ¾Ö¸³ö dig °æ±¾¼°ÆäËùÓÃµÄ²éÑ¯Ñ¡ÏîµÄ³õÊ¼×¢ÊÍ¡£È±Ê¡Çé¿öÏÂÏÔÊ¾×¢ÊÍ¡£
+
 +[no]short
 Ìá¹©¼òÒª´ð¸´¡£È±Ê¡ÖµÊÇÒÔÈß³¤¸ñÊ½ÏÔÊ¾´ð¸´ÐÅÏ¢¡£
+
 +[no]identify
 µ±ÆôÓÃ +short Ñ¡ÏîÊ±£¬ÏÔÊ¾ [»ò²»ÏÔÊ¾] Ìá¹©Ó¦´ðµÄ IP µØÖ·ºÍ¶Ë¿ÚºÅ¡£Èç¹ûÇëÇó¼ò¶Ì¸ñÊ½Ó¦´ð£¬È±Ê¡Çé¿ö²»ÏÔÊ¾Ìá¹©Ó¦´ðµÄ·þÎñÆ÷µÄÔ´µØÖ·ºÍ¶Ë¿ÚºÅ¡£
+
 +[no]comments
 ÇÐ»»Êä³öÖÐµÄ×¢ÊÍÐÐÏÔÊ¾¡£È±Ê¡ÖµÊÇÏÔÊ¾×¢ÊÍ¡£
+
 +[no]stats
 ¸Ã²éÑ¯Ñ¡ÏîÉè¶¨ÏÔÊ¾Í³¼ÆÐÅÏ¢£º²éÑ¯½øÐÐÊ±£¬Ó¦´ðµÄ´óÐ¡µÈµÈ¡£È±Ê¡ÏÔÊ¾²éÑ¯Í³¼ÆÐÅÏ¢¡£
+
 +[no]qr
 ÏÔÊ¾ [²»ÏÔÊ¾] ·¢ËÍµÄ²éÑ¯ÇëÇó¡£È±Ê¡²»ÏÔÊ¾¡£
+
 +[no]question
 µ±·µ»ØÓ¦´ðÊ±£¬ÏÔÊ¾ [²»ÏÔÊ¾] ²éÑ¯ÇëÇóµÄÎÊÌâ²¿·Ö¡£È±Ê¡×÷Îª×¢ÊÍÏÔÊ¾ÎÊÌâ²¿·Ö¡£
+
 +[no]answer
 ÏÔÊ¾ [²»ÏÔÊ¾] Ó¦´ðµÄ»Ø´ð²¿·Ö¡£È±Ê¡ÏÔÊ¾¡£
+
 +[no]authority
 ÏÔÊ¾ [²»ÏÔÊ¾] Ó¦´ðµÄÈ¨ÏÞ²¿·Ö¡£È±Ê¡ÏÔÊ¾¡£
+
 +[no]additional
 ÏÔÊ¾ [²»ÏÔÊ¾] Ó¦´ðµÄ¸½¼Ó²¿·Ö¡£È±Ê¡ÏÔÊ¾¡£
+
 +[no]all
 ÉèÖÃ»òÇå³ýËùÓÐÏÔÊ¾±êÖ¾¡£
 +time=T
@@ -73,6 +125,7 @@ digÃüÁîÑ¡Ïî
 ³öÓÚÍêÈ«¿¼ÂÇ£¬ÉèÖÃ±ØÐë³öÏÖÔÚÃû³Æ D µÄµãÊý¡£È±Ê¡ÖµÊÇÊ¹ÓÃÔÚ /etc/resolv.conf ÖÐµÄ ndots Óï¾ä¶¨ÒåµÄ£¬»òÕßÊÇ 1£¬Èç¹ûÃ»ÓÐ ndots Óï¾äµÄ»°¡£´ø¸üÉÙµãÊýµÄÃû³Æ ±»½âÊÍÎªÏà¶ÔÃû³Æ£¬²¢Í¨¹ýËÑË÷ÁÐ±íÖÐµÄÓò»òÎÄ¼þ /etc/resolv.conf ÖÐµÄÓòÎ±Ö¸Áî½øÐÐËÑË÷¡£
 +bufsize=B
 ÉèÖÃÊ¹ÓÃ EDNS0 µÄ UDP ÏûÏ¢»º³åÇø´óÐ¡Îª B ×Ö½Ú¡£»º³åÇøµÄ×î´óÖµºÍ×îÐ¡Öµ·Ö±ðÎª 65535 ºÍ 0¡£³¬³öÕâ¸ö·¶Î§µÄÖµ×Ô¶¯ÉáÈëµ½×î½üµÄÓÐÐ§Öµ¡£
+
 +[no]multiline
 ÒÔÏêÏ¸µÄ¶àÐÐ¸ñÊ½ÏÔÊ¾ÀàËÆ SOA µÄ¼ÇÂ¼£¬²¢¸½´ø¿É¶Á×¢ÊÍ¡£È±Ê¡ÖµÊÇÃ¿µ¥¸öÐÐÉÏÏÔÊ¾Ò»Ìõ¼ÇÂ¼£¬ÒÔ±ãÓÚ¼ÆËã»ú½âÎö dig µÄÊä³ö¡£
 
@@ -89,23 +142,35 @@ digÃüÁîÑ¡Ïî
 
 
 
+
+
 dig @8.8.8.8 www.baidu.com A
+
 dig @dnsserver name type
-server   ´ý²éÑ¯Ãû³Æ·þÎñÆ÷µÄÃû³Æ»ò IP µØÖ·¡£¿ÉÒÔÊÇÓÃµã·Ö¸ôµÄ IPv4 µØÖ·»òÓÃÃ°ºÅ·Ö¸ôµÄ IPv6 µØÖ·¡£µ±ÓÉÖ÷»úÌá¹©·þÎñÆ÷²ÎÊýÊ±£¬dig ÔÚ²éÑ¯ÓòÃû·þÎñÆ÷Ç°ÏÈ½âÎöÄÇ¸öÃû³Æ¡£Èç¹ûÃ»ÓÐ·þÎñÆ÷²ÎÊý¿ÉÒÔÌá¹©£¬dig ²Î¿¼ /etc/resolv.conf£¬È»ºó²éÑ¯ÁÐ¾ÙÔÚÄÇÀïµÄÓòÃû·þÎñÆ÷¡£ÏÔÊ¾À´×ÔÓòÃû·þÎñÆ÷µÄÓ¦´ð¡£
+server  
+ ´ý²éÑ¯Ãû³Æ·þÎñÆ÷µÄÃû³Æ»ò IP µØÖ·¡£¿ÉÒÔÊÇÓÃµã·Ö¸ôµÄ IPv4 µØÖ·»òÓÃÃ°ºÅ·Ö¸ôµÄ IPv6 µØÖ·¡£µ±ÓÉÖ÷»úÌá¹©·þÎñÆ÷²ÎÊýÊ±£¬dig ÔÚ²éÑ¯ÓòÃû·þÎñÆ÷Ç°ÏÈ½âÎöÄÇ¸öÃû³Æ¡£Èç¹ûÃ»ÓÐ·þÎñÆ÷²ÎÊý¿ÉÒÔÌá¹©£¬dig ²Î¿¼ /etc/resolv.conf£¬È»ºó²éÑ¯ÁÐ¾ÙÔÚÄÇÀïµÄÓòÃû·þÎñÆ÷¡£ÏÔÊ¾À´×ÔÓòÃû·þÎñÆ÷µÄÓ¦´ð¡£
 name   ½«Òª²éÑ¯µÄ×ÊÔ´¼ÇÂ¼µÄÃû³Æ¡£
 type    ÏÔÊ¾ËùÐèµÄ²éÑ¯ÀàÐÍ £­ ANY¡¢A¡¢MX¡¢SIG£¬ÒÔ¼°ÈÎºÎÓÐÐ§²éÑ¯ÀàÐÍµÈ¡£Èç¹û²»Ìá¹©ÈÎºÎÀàÐÍ²ÎÊý£¬dig ½«¶Ô¼ÍÂ¼ A Ö´ÐÐ²éÑ¯¡£
 
 
 µ±Ö±½ÓÊ¹ÓÃdigÃüÁî£¬²»¼ÓÈÎºÎ²ÎÊýºÍÑ¡ÏîÊ±£¬dig»áÏòÄ¬ÈÏµÄÉÏÁ¬DNS·þÎñÆ÷²éÑ¯¡°.¡±£¨¸ùÓò£©µÄNS¼ÇÂ¼¡£
 
+
 dig -f querylist.txt -c IN -t A
+
 ´ÓtxtÎÄ¼þÖÐ¶ÁÈ¡Òª½âÎöµÄÓòÃû£¬Ö¸¶¨Ð­ÒéÀàÐÍIN£¬ÉèÖÃ²éÑ¯ÀàÐÍÎª type
 
+
 dig +tcp www.baidu.com
+
 DNS²éÑ¯¹ý³ÌÖÐµÄ½»»¥ÊÇ²ÉÓÃUDPµÄ¡£Èç¹ûÄãÏ£Íû²ÉÓÃTCP·½Ê½£¬ÐèÒªÕâÑù
 
+
 dig +trace roclinux.cn 
+
 dig·Ç³£ÖøÃûµÄÒ»¸ö²éÑ¯Ñ¡Ïî¾ÍÊÇ+trace£¬µ±Ê¹ÓÃÕâ¸ö²éÑ¯Ñ¡Ïîºó£¬dig»á´Ó¸ùÓò²éÑ¯Ò»Ö±¸ú×ÙÖ±µ½²éÑ¯µ½×îÖÕ½á¹û£¬²¢½«Õû¸ö¹ý³ÌÐÅÏ¢Êä³ö³öÀ´
 
+
 dig +short www.baidu.com
+
 Ê¹ÓÃ+shortµÄ»°£¬½ö»áÊä³ö×î¾«¼òµÄCNAMEÐÅÏ¢ºÍA¼ÇÂ¼£¬ÆäËû¶¼²»»áÊä³ö¡£¾ÍÏñÕâÑù
