@@ -1,4 +1,11 @@
+yum localinstall *.rpm----------------这种方式可以处理依赖安装
+
+
+
+
 mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+
+
 
 
 
